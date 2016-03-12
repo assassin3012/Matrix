@@ -29,10 +29,10 @@ public:
 	Matrix &operator = (const Matrix&);
 	Matrix &EntryFromFile(char* filename);
 	int* operator [] (int);
-	int Rows();
-	int Columns();
-	int Maxelement();
-	int Minelement();
+	int Rows() const;
+	int Columns() const;
+	int Maxelement() const;
+	int Minelement() const;
 	void Entry();
 	friend ostream &operator << (ostream &cout,const Matrix &temp);
 private:
@@ -188,15 +188,15 @@ int* Matrix::operator [] (int index)
 		return nullptr;
 	}
 }
-int Matrix::Rows()
+int Matrix::Rows() const
 {
 	return n;
 }
-int Matrix::Columns()
+int Matrix::Columns() const
 {
 	return m;
 }
-int Matrix::Maxelement()
+int Matrix::Maxelement() const
 {
 	int maxelement = matrix[0][0];
 	for (int i = 0; i < n; i++)
@@ -208,7 +208,7 @@ int Matrix::Maxelement()
 	}
 	return maxelement;
 }
-int Matrix::Minelement()
+int Matrix::Minelement() const
 {
 	int minelement = matrix[0][0];
 	for (int i = 0; i < n; i++)
