@@ -7,7 +7,8 @@
 #include <fstream>
 #include <string>
 using namespace std;
-
+#ifndef MATR_CPP
+#define MATR_CPP
 int min(int a, int b)
 {
 	return a < b ? a : b;
