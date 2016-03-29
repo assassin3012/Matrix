@@ -31,7 +31,7 @@ SCENARIO("Matrix Minelement()", "[Minelement]") {
 	A.FillFromFile("A.txt");
 	REQUIRE(A.Maxelement() == 1);
 }
-SCENARIO("Matrix operator+", "[+]") {
+SCENARIO("Matrix operator+", "[addition]") {
 	Matrix A,B,AB,result;
 	A.FillFromFile("A.txt");
 	B.FillFromFile("B.txt");
@@ -39,7 +39,7 @@ SCENARIO("Matrix operator+", "[+]") {
 	AB=A+B;
 	REQUIRE(result==AB);
 }
-SCENARIO("Matrix operator-", "[-]") {
+SCENARIO("Matrix operator-", "[subtraction]") {
 	Matrix A,B,AB,result;
 	A.FillFromFile("A.txt");
 	B.FillFromFile("B.txt");
@@ -47,7 +47,7 @@ SCENARIO("Matrix operator-", "[-]") {
 	AB=A-B;
 	REQUIRE(result==AB);
 }
-SCENARIO("Matrix operator*", "[*]") {
+SCENARIO("Matrix operator*", "[multiplication]") {
 	Matrix A,B,AB,result;
 	A.FillFromFile("A.txt");
 	B.FillFromFile("B.txt");
