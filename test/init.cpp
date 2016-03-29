@@ -1,4 +1,4 @@
-#include <matrix.h>
+#include "matrix.h"
 #include <catch.hpp>
 #include <fstream>
 
