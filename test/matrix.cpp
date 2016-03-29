@@ -121,9 +121,9 @@ Matrix &Matrix::operator = (const Matrix &matr)
 	}
 	return *this;
 }
-bool Matrix::operator ==(const Matrix & matr) 
+bool Matrix::operator == (const Matrix & matr) 
 {
-	if (n!=matr.n || m!=matr) 
+	if (n!=matr.n || m!=matr.m) 
 	{
 		return false;
 	}
