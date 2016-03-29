@@ -8,7 +8,7 @@ SCENARIO("Matrix init", "[init]") {
 		auto columns = 4;
 		WHEN("Create instansce of Matrix") {
 			Matrix A(rows, columns);
-			Matrix B(rows*2+1,columns*2+1);
+			Matrix B(rows*2+columns,columns*2+rows);
 			Matrix C;
 			THEN("The number of rows and columns must be preserved") {
 				REQUIRE(A.Rows() == rows);
