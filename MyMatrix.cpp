@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include <Matrix.h>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -16,30 +17,6 @@ int max(int a, int b)
 	return a > b ? a : b;
 }
 
-class Matrix
-{
-public:
-	Matrix() :n(0), m(0), matrix(nullptr) {}
-	Matrix(int rows, int columns);
-	Matrix(const Matrix& copy);
-	~Matrix();
-	Matrix operator + (const Matrix&);
-	Matrix operator - (const Matrix&);
-	Matrix operator * (const Matrix&);
-	Matrix &operator = (const Matrix&);
-	bool FillFromFile(const  std::string &filePath);
-	int* operator [] (int);
-	int Rows() const;
-	int Columns() const;
-	int Maxelement() const;
-	int Minelement() const;
-	void Fill();
-	friend ostream &operator << (ostream &cout,const Matrix &temp);
-private:
-	int **matrix;
-	int n;	// סענמך
-	int m;	// סעמכבצמג
-};
 
 Matrix::Matrix(int rows, int columns):n(rows), m(columns)
 {
