@@ -21,13 +21,15 @@ SCENARIO("Matrix init", "[init]") {
 		}
 	}
 }
-SCENARIO("Matrix Maxelement()", "[Maxelement]") {
+
+SCENARIO("Matrix Maxelement()", "[Max element]") {
 	Matrix A;
 	A.FillFromFile("A.txt");
 	REQUIRE(A.Maxelement() == 6);
 }
+
 /*
-SCENARIO("Matrix Minelement()", "[Minelement]") {
+SCENARIO("Matrix Minelement()", "[Min element]") {
 	Matrix A;
 	A.FillFromFile("A.txt");
 	REQUIRE(A.Maxelement() == 1);
