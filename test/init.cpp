@@ -13,10 +13,10 @@ SCENARIO("Matrix init", "[init]") {
 			THEN("The number of rows and columns must be preserved") {
 				REQUIRE(A.Rows() == rows);
 				REQUIRE(A.Columns() == columns);
-				REQUIRE(A.Rows() == 2*rows+1);
-				REQUIRE(A.Columns() == 2*columns+1);
-				REQUIRE(A.Rows() == 0);
-				REQUIRE(A.Columns() == 0);
+				REQUIRE(B.Rows() == 2*rows+1);
+				REQUIRE(B.Columns() == 2*columns+1);
+				REQUIRE(C.Rows() == 0);
+				REQUIRE(C.Columns() == 0);
 			}
 		}
 	}
