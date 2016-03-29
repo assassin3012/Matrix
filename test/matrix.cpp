@@ -121,6 +121,25 @@ Matrix &Matrix::operator = (const Matrix &matr)
 	}
 	return *this;
 }
+bool Matrix::operator ==(const Matrix & matr) 
+{
+	if (n!=matr.n || m!=matr) 
+	{
+		return false;
+	}
+
+	for (int i = 0; i < n; i++) 
+	{
+		for (int j = 0; j < m; j++) 
+		{
+			if (matrix[i][j] != matr.matrix[i][j]) 
+			{
+				return false;
+			}
+		}
+	}
+	return true;
+}
 bool Matrix::FillFromFile(const std::string &filePath)
 {
 	ifstream input;
