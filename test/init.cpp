@@ -23,11 +23,35 @@ SCENARIO("Matrix init", "[init]") {
 }
 SCENARIO("Matrix Maxelement()", "[Maxelement]") {
 	Matrix A;
-	A.FillFromFile("A2x2.txt");
+	A.FillFromFile("A.txt");
 	REQUIRE(A.Maxelement() == 6);
 }
 SCENARIO("Matrix Minelement()", "[Minelement]") {
 	Matrix A;
-	A.FillFromFile("A2x2.txt");
+	A.FillFromFile("A.txt");
 	REQUIRE(A.Maxelement() == 1);
+}
+SCENARIO("Matrix operator+", "[+]") {
+	Matrix A,B,result;
+	A.FillFromFile("A.txt");
+	B.FillFromFile("B.txt");
+	result.FillFromFile("A+B.txt");
+	AB=A+B;
+	REQUIRE(result==AB);
+}
+SCENARIO("Matrix operator-", "[-]") {
+	Matrix A,B,result;
+	A.FillFromFile("A.txt");
+	B.FillFromFile("B.txt");
+	result.FillFromFile("A-B.txt");
+	AB=A-B;
+	REQUIRE(result==AB);
+}
+SCENARIO("Matrix operator*", "[*]") {
+	Matrix A,B,result;
+	A.FillFromFile("A.txt");
+	B.FillFromFile("B.txt");
+	result.FillFromFile("AxB.txt");
+	AB=A*B;
+	REQUIRE(result==AB);
 }
