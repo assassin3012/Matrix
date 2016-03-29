@@ -26,6 +26,7 @@ SCENARIO("Matrix Maxelement()", "[Maxelement]") {
 	A.FillFromFile("A.txt");
 	REQUIRE(A.Maxelement() == 6);
 }
+/*
 SCENARIO("Matrix Minelement()", "[Minelement]") {
 	Matrix A;
 	A.FillFromFile("A.txt");
@@ -55,3 +56,4 @@ SCENARIO("Matrix operator*", "[multiplication]") {
 	AB=A*B;
 	REQUIRE(result==AB);
 }
+*/
