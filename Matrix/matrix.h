@@ -29,8 +29,8 @@ public:
 	friend ostream &operator << (ostream &cout, const Matrix &temp);
 private:
 	int **matrix;
-	int n;	// ñòðîê
-	int m;	// ñòîëáöîâ
+	int n;	// Ã±Ã²Ã°Ã®Ãª
+	int m;	// Ã±Ã²Ã®Ã«Ã¡Ã¶Ã®Ã¢
 };
 
 #endif
