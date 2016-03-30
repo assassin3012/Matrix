@@ -241,4 +241,3 @@ ostream &operator << (ostream &os, const Matrix &temp)
 	}
 	return os;
 }
-#endif
