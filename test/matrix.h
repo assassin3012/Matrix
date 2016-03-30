@@ -20,15 +20,15 @@ template <typename T>
 class Matrix
 {
 public:
-	Matrix() :n(0), m(0), matrix(nullptr) {}
-	Matrix(int rows, int columns);
-	Matrix(const Matrix &copy);
-	~Matrix();
-	Matrix operator + (const Matrix&);
-	Matrix operator - (const Matrix&);
-	Matrix operator * (const Matrix&);
-	Matrix &operator = (const Matrix&);
-	bool operator == (const Matrix&);
+	Matrix<T>() :n(0), m(0), matrix(nullptr) {}
+	Matrix<T>(int rows, int columns);
+	Matrix<T>(const Matrix &copy);
+	~Matrix<T>();
+	Matrix<T> operator + (const Matrix<T>&);
+	Matrix<T> operator - (const Matrix<T>&);
+	Matrix<T> operator * (const Matrix<T>&);
+	Matrix<T> &operator = (const Matrix<T>&);
+	bool operator == (const Matrix<T>&);
 	T* operator [] (int);
 	int Rows() const;
 	int Columns() const;
