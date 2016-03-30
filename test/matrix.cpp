@@ -7,8 +7,8 @@
 #include <fstream>
 #include <string>
 using namespace std;
-#ifndef matrix.cpp
-#define matrix.cpp
+#ifndef matrix_cpp
+#define matrix_cpp
 int min(int a, int b)
 {
 	return a < b ? a : b;
