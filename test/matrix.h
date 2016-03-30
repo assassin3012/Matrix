@@ -22,8 +22,8 @@ public:
 	int* operator [] (int);
 	int Rows() const;
 	int Columns() const;
-	friend ostream &operator << <>(ostream &cout, const Matrix &temp);
-	friend istream &operator >> <>(istream &input, Matrix &matr);
+	friend ostream &operator << (ostream &cout, const Matrix &temp);
+	friend istream &operator >> (istream &input, Matrix &matr);
 private:
 	int **matrix;
 	int n;	// ñòðîê
