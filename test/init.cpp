@@ -38,6 +38,8 @@ SCENARIO("Matrix operator >>", "[Fill]")
 }
 SCENARIO("Matrix operator <<", "[out]") 
 {
+	Matrix A(2,2);
+	Matrix B(2,2);
 	std::ifstream("A.txt") >> A;
 	fstream out; 
 	out.open("out.txt");
