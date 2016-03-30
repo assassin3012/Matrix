@@ -1,5 +1,7 @@
 // matrix.cpp: îïðåäåëÿåò òî÷êó âõîäà äëÿ êîíñîëüíîãî ïðèëîæåíèÿ.
 //
+#ifndef matrix_cpp
+#define matrix_cpp
 
 #include "stdafx.h"
 #include "matrix.h"
@@ -7,8 +9,7 @@
 #include <fstream>
 #include <string>
 using namespace std;
-#ifndef matrix_cpp
-#define matrix_cpp
+
 int min(int a, int b)
 {
 	return a < b ? a : b;
