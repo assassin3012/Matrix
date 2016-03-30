@@ -17,7 +17,7 @@ T max(T a, T b)
 {
 	return a > b ? a : b;
 }
-
+/*
 template <typename T>
 Matrix<T>::Matrix(int rows, int columns) :n(rows), m(columns)
 {
@@ -56,6 +56,7 @@ Matrix<T>::~Matrix()
 		delete[] matrix;
 	}
 }
+*/
 template <typename T>
 Matrix<T> Matrix<T>::operator + (const Matrix<T> &matr)
 {
