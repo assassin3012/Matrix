@@ -23,8 +23,6 @@ public:
 	int* operator [] (int);
 	int Rows() const;
 	int Columns() const;
-	int Maxelement() const;
-	int Minelement() const;
 	void Fill();
 	friend ostream &operator << (ostream &cout, const Matrix &temp);
 private:
