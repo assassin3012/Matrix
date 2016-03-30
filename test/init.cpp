@@ -86,7 +86,7 @@ SCENARIO("Matrix operator *", "[multiplication]")
 }
 SCENARIO("Matrix operator [](int)", "[row]") 
 {
-	Matrix A;
+	Matrix A(2,2);
 	std::ifstream("A.txt") >> A;
 	int* row = A[1];
 	REQUIRE(row[0]==2);
