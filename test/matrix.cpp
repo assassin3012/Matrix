@@ -7,40 +7,45 @@
 #include <string>
 using namespace std;
 
-int min(int a, int b)
+template <typename T>
+T min(T a, T b)
 {
 	return a < b ? a : b;
 }
-int max(int a, int b)
+template <typename T>
+T max(T a, T b)
 {
 	return a > b ? a : b;
 }
 
-Matrix::Matrix(int rows, int columns) :n(rows), m(columns)
+template <typename T>
+Matrix<T>::Matrix(int rows, int columns) :n(rows), m(columns)
 {
-	matrix = new int*[n];
+	matrix = new T*[n];
 	for (int i = 0; i<n; i++)
 	{
-		matrix[i] = new int[m];
+		matrix[i] = new T[m];
 		for (int j = 0; j<m; j++)
 		{
 			matrix[i][j] = 0;
 		}
 	}
 }
-Matrix::Matrix(const Matrix& copy) :n(copy.n), m(copy.m)
+template <typename T>
+Matrix<T>::Matrix(const Matrix& copy) :n(copy.n), m(copy.m)
 {
-	matrix = new int*[n];
+	matrix = new T*[n];
 	for (int i = 0; i<n; i++)
 	{
-		matrix[i] = new int[m];
+		matrix[i] = new T[m];
 		for (int j = 0; j<m; j++)
 		{
 			matrix[i][j] = copy.matrix[i][j];
 		}
 	}
 }
-Matrix::~Matrix()
+template <typename T>
+Matrix<T>::~Matrix()
 {
 	if (matrix != nullptr)
 	{
@@ -51,7 +56,7 @@ Matrix::~Matrix()
 		delete[] matrix;
 	}
 }
-
+template <typename T>
 Matrix Matrix::operator + (const Matrix &matr)
 {
 	Matrix result(n, m);
@@ -64,6 +69,7 @@ Matrix Matrix::operator + (const Matrix &matr)
 	}
 	return result;
 }
+template <typename T>
 Matrix Matrix::operator - (const Matrix &matr)
 {
 	Matrix result(n, m);
@@ -76,6 +82,7 @@ Matrix Matrix::operator - (const Matrix &matr)
 	}
 	return result;
 }
+template <typename T>
 Matrix Matrix::operator * (const Matrix &matr)
 {
 	Matrix result(n, matr.m);
@@ -83,7 +90,7 @@ Matrix Matrix::operator * (const Matrix &matr)
 	{
 		for (int j = 0; j < matr.m; j++)
 		{
-			int value = 0;
+			T value = 0;
 			for (int k = 0; k < m; k++)
 			{
 				value += matrix[i][k] * matr.matrix[k][j];
@@ -93,7 +100,8 @@ Matrix Matrix::operator * (const Matrix &matr)
 	}
 	return result;
 }
-Matrix &Matrix::operator = (const Matrix &matr)
+template <typename T>
+Matrix &Matrix<T>::operator = (const Matrix &matr)
 {
 	if (this != &matr)
 	{
@@ -107,10 +115,10 @@ Matrix &Matrix::operator = (const Matrix &matr)
 		}
 		n = matr.n;
 		m = matr.m;
-		matrix = new int*[n];
+		matrix = new T*[n];
 		for (int i = 0; i<n; i++)
 		{
-			matrix[i] = new int[m];
+			matrix[i] = new T[m];
 			for (int j = 0; j<m; j++)
 			{
 				matrix[i][j] = matr.matrix[i][j];
@@ -119,7 +127,8 @@ Matrix &Matrix::operator = (const Matrix &matr)
 	}
 	return *this;
 }
-bool Matrix::operator == (const Matrix &matr) 
+template <typename T>
+bool Matrix<T>::operator == (const Matrix &matr) 
 {
 	if (n!=matr.n || m!=matr.m) 
 	{
@@ -138,7 +147,8 @@ bool Matrix::operator == (const Matrix &matr)
 	}
 	return true;
 }
-int* Matrix::operator [] (int index)
+template <typename T>
+T* Matrix<T>::operator [] (int index)
 {
 	if (index <= this->n)
 	{
@@ -149,27 +159,31 @@ int* Matrix::operator [] (int index)
 		return nullptr;
 	}
 }
-int Matrix::Rows() const
+template <typename T>
+int Matrix<T>::Rows() const
 {
 	return n;
 }
-int Matrix::Columns() const
+template <typename T>
+int Matrix<T>::Columns() const
 {
 	return m;
 }
-ostream &operator << (ostream &os, const Matrix &temp)
+template <typename T>
+ostream &operator << (ostream &out, const Matrix<T> &temp)
 {
 	for (int i = 0; i < temp.n; i++)
 	{
 		for (int j = 0; j < temp.m; j++)
 		{
-			os << temp.matrix[i][j] << " ";
+			out << temp.matrix[i][j] << " ";
 		}
-		os << endl;
+		out << endl;
 	}
-	return os;
+	return out;
 }
-istream &operator >> (istream &input, Matrix &matr)
+template <typename T>
+istream &operator >> (istream &input, Matrix<T> &matr)
 {
     for (int i = 0; i < matr.n; i++) 
     {
@@ -177,7 +191,7 @@ istream &operator >> (istream &input, Matrix &matr)
         {
             if (!(input >> matr.matrix[i][j]))
             {
-                throw "exception in fill matrix";
+                throw "Error matrix fill";
             }
         }
     }
