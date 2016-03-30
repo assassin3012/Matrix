@@ -22,39 +22,46 @@ SCENARIO("Matrix init", "[init]") {
 	}
 }
 
-SCENARIO("Matrix >>", "[fill]") {
+SCENARIO("Matrix operator >>", "[Fill]") {
 	std::ifstream input("A.txt");
 	Matrix A = Matrix(2, 2);
 	REQUIRE( input >> A );
 	REQUIRE( A[0][0] == 1 );
-	REQUIRE( A[0][1] == 1 );
-	REQUIRE( A[1][0] == 2 );
+	REQUIRE( A[0][1] == 5 );
+	REQUIRE( A[1][0] == 6 );
 	REQUIRE( A[1][1] == 2 );
 }
-/*
-SCENARIO("Matrix operator+", "[addition]") {
-	Matrix A,B,AB,result;
-	A.FillFromFile("A22.txt");
-	B.FillFromFile("B.txt");
-	result.FillFromFile("A+B.txt");
-	AB=A+B;
-	REQUIRE(A==AB);
-	REQUIRE(B==result);
+
+SCENARIO("Matrix operator +", "[addition]") {
+	Matrix A(2,2);
+	Matrix B(2,2);
+	Matrix expected(2,2);
+	Matrix result(2,2);
+	std::ifstream("A.txt") >> A;
+	std::ifstream("B.txt") >> B;
+	std::ifstream("A+B.txt") >> result;
+	expected=A+B;
+	REQUIRE(expected==result);
 }
-SCENARIO("Matrix operator-", "[subtraction]") {
-	Matrix A,B,AB,result;
-	A.FillFromFile("A.txt");
-	B.FillFromFile("B.txt");
-	result.FillFromFile("A-B.txt");
-	AB=A-B;
-	REQUIRE(result==AB);
+SCENARIO("Matrix operator -", "[subtraction]") {
+Matrix A(2,2);
+	Matrix B(2,2);
+	Matrix expected(2,2);
+	Matrix result(2,2);
+	std::ifstream("A.txt") >> A;
+	std::ifstream("B.txt") >> B;
+	std::ifstream("A-B.txt") >> result;
+	expected=A-B;
+	REQUIRE(expected==result);
 }
 SCENARIO("Matrix operator*", "[multiplication]") {
-	Matrix A,B,AB,result;
-	A.FillFromFile("A.txt");
-	B.FillFromFile("B.txt");
-	result.FillFromFile("AxB.txt");
-	AB=A*B;
-	REQUIRE(result==AB);
+Matrix A(2,2);
+	Matrix B(2,2);
+	Matrix expected(2,2);
+	Matrix result(2,2);
+	std::ifstream("A.txt") >> A;
+	std::ifstream("B.txt") >> B;
+	std::ifstream("A*B.txt") >> result;
+	expected=A*B;
+	REQUIRE(expected==result);
 }
-*/
