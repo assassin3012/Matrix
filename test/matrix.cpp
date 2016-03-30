@@ -193,30 +193,6 @@ int Matrix::Columns() const
 {
 	return m;
 }
-int Matrix::Maxelement() const
-{
-	int maxelement = matrix[0][0];
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			maxelement = max(maxelement, matrix[i][j]);
-		}
-	}
-	return maxelement;
-}
-int Matrix::Minelement() const
-{
-	int minelement = matrix[0][0];
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			minelement = min(minelement, matrix[i][j]);
-		}
-	}
-	return minelement;
-}
 void Matrix::Fill()
 {
 	for (int i = 0; i<n; i++)
