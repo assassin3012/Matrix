@@ -7,25 +7,35 @@
 #include <string>
 using namespace std;
 
+template <typename T>
+class Matrix;
+
+template <class T>
+ostream &operator << (ostream &out, const Matrix<T> &);
+
+template <class T>
+istream &operator >> (istream &input, Matrix<T> &);
+
+template <typename T>
 class Matrix
 {
 public:
 	Matrix() :n(0), m(0), matrix(nullptr) {}
 	Matrix(int rows, int columns);
-	Matrix(const Matrix& copy);
+	Matrix(const Matrix &copy);
 	~Matrix();
 	Matrix operator + (const Matrix&);
 	Matrix operator - (const Matrix&);
 	Matrix operator * (const Matrix&);
 	Matrix &operator = (const Matrix&);
 	bool operator == (const Matrix&);
-	int* operator [] (int);
+	T* operator [] (int);
 	int Rows() const;
 	int Columns() const;
-	friend ostream &operator << (ostream &cout, const Matrix &temp);
-	friend istream &operator >> (istream &input, Matrix &matr);
+	friend ostream &operator << (ostream &out, const Matrix<T> &temp);
+	friend istream &operator >> (istream &input, Matrix<T> &matr);
 private:
-	int **matrix;
+	T **matrix;
 	int n;	// ñòðîê
 	int m;	// ñòîëáöîâ
 };
