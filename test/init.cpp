@@ -22,6 +22,16 @@ SCENARIO("Matrix init", "[init]") {
 	}
 }
 
+SCENARIO("Matrix >>", "[fill]") {
+	std::ifstream input("A.txt");
+	Matrix A = Matrix(2, 2);
+	REQUIRE( input >> A );
+	REQUIRE( A[0][0] == 1 );
+	REQUIRE( A[0][1] == 1 );
+	REQUIRE( A[1][0] == 2 );
+	REQUIRE( A[1][1] == 2 );
+}
+/*
 SCENARIO("Matrix operator+", "[addition]") {
 	Matrix A,B,AB,result;
 	A.FillFromFile("A22.txt");
@@ -47,3 +57,4 @@ SCENARIO("Matrix operator*", "[multiplication]") {
 	AB=A*B;
 	REQUIRE(result==AB);
 }
+*/
