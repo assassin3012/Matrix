@@ -1,8 +1,5 @@
 // matrix.cpp: îïðåäåëÿåò òî÷êó âõîäà äëÿ êîíñîëüíîãî ïðèëîæåíèÿ.
 //
-#ifndef matrix_cpp
-#define matrix_cpp
-
 #include "stdafx.h"
 #include "matrix.h"
 #include <iostream>
