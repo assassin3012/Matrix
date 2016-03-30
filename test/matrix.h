@@ -1,7 +1,6 @@
+#pragma once
 #ifndef matrix_h
 #define matrix_h
-
-#pragma once
 
 #include <iostream>
 #include <fstream>
