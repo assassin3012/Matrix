@@ -38,8 +38,8 @@ SCENARIO("Matrix operator >>", "[Fill]")
 }
 SCENARIO("Matrix operator <<", "[out]") 
 {
-	Matrix<int> A(2,2);
-	Matrix<int> B(2,2);
+	Matrix<int> A = Matrix<int>(2, 2);
+	Matrix<int> B = Matrix<int>(2, 2);
 	std::ifstream("A.txt") >> A;
 	fstream out; 
 	out.open("out.txt");
@@ -50,10 +50,10 @@ SCENARIO("Matrix operator <<", "[out]")
 }
 SCENARIO("Matrix operator +", "[addition]") 
 {
-	Matrix<int> A(2,2);
-	Matrix<int> B(2,2);
-	Matrix<int> expected(2,2);
-	Matrix<int> result(2,2);
+	Matrix<int> A = Matrix<int>(2, 2);
+	Matrix<int> B = Matrix<int>(2, 2);
+	Matrix<int> expected = Matrix<int>(2, 2);
+	Matrix<int> result = Matrix<int>(2, 2);
 	std::ifstream("A.txt") >> A;
 	std::ifstream("B.txt") >> B;
 	std::ifstream("A+B.txt") >> result;
@@ -62,10 +62,10 @@ SCENARIO("Matrix operator +", "[addition]")
 }
 SCENARIO("Matrix operator -", "[subtraction]") 
 {
-	Matrix<int> A(2,2);
-	Matrix<int> B(2,2);
-	Matrix<int> expected(2,2);
-	Matrix<int> result(2,2);
+	Matrix<int> A = Matrix<int>(2, 2);
+	Matrix<int> B = Matrix<int>(2, 2);
+	Matrix<int> expected = Matrix<int>(2, 2);
+	Matrix<int> result = Matrix<int>(2, 2);
 	std::ifstream("A.txt") >> A;
 	std::ifstream("B.txt") >> B;
 	std::ifstream("A-B.txt") >> result;
@@ -74,10 +74,10 @@ SCENARIO("Matrix operator -", "[subtraction]")
 }
 SCENARIO("Matrix operator *", "[multiplication]") 
 {
-	Matrix<int> A(2,2);
-	Matrix<int> B(2,2);
-	Matrix<int> expected(2,2);
-	Matrix<int> result(2,2);
+	Matrix<int> A = Matrix<int>(2, 2);
+	Matrix<int> B = Matrix<int>(2, 2);
+	Matrix<int> expected = Matrix<int>(2, 2);
+	Matrix<int> result = Matrix<int>(2, 2);
 	std::ifstream("A.txt") >> A;
 	std::ifstream("B.txt") >> B;
 	std::ifstream("AxB.txt") >> result;
@@ -86,7 +86,7 @@ SCENARIO("Matrix operator *", "[multiplication]")
 }
 SCENARIO("Matrix operator [](int)", "[row]") 
 {
-	Matrix<int> A(2,2);
+	Matrix<int> A = Matrix<int>(2, 2);
 	std::ifstream("A.txt") >> A;
 	int* row = A[1];
 	REQUIRE(row[0]==2);
@@ -94,8 +94,8 @@ SCENARIO("Matrix operator [](int)", "[row]")
 }
 SCENARIO("Matrix operator ==", "[comparison]") 
 {
-	Matrix<int> A(2,2);
-	Matrix<int> B(2,2);
+	Matrix<int> A = Matrix<int>(2, 2);
+	Matrix<int> B = Matrix<int>(2, 2);
 	std::ifstream("A.txt") >> A;
 	std::ifstream("A.txt") >> B;
 	REQUIRE(A==B);
