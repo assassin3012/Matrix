@@ -149,7 +149,7 @@ bool Matrix::FillFromFile(char* path) {
 			stream >> n >> m;
 			int **mass = new int*[n];
 			for (int i = 0; i < n; i++) {
-				mass[i] = new T[m];
+				mass[i] = new int[m];
 				for (int j = 0; j < m; j++) {
 					stream >> mass[i][j];
 				}
