@@ -19,12 +19,11 @@ public:
 	Matrix operator * (const Matrix&);
 	Matrix &operator = (const Matrix&);
 	bool operator == (const Matrix&);
-	bool FillFromFile(char *filePath);
 	int* operator [] (int);
 	int Rows() const;
 	int Columns() const;
-	void Fill();
-	friend ostream &operator << (ostream &cout, const Matrix &temp);
+	friend ostream &operator << <>(ostream &cout, const Matrix &temp);
+	friend istream &operator >> <>(istream &input, Matrix &matr);
 private:
 	int **matrix;
 	int n;	// ñòðîê
