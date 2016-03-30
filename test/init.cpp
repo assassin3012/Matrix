@@ -28,7 +28,8 @@ SCENARIO("Matrix operator+", "[addition]") {
 	B.FillFromFile("B.txt");
 	result.FillFromFile("A+B.txt");
 	AB=A+B;
-	REQUIRE(result==AB);
+	REQUIRE(A==AB);
+	REQUIRE(B==result);
 }
 SCENARIO("Matrix operator-", "[subtraction]") {
 	Matrix A,B,AB,result;
