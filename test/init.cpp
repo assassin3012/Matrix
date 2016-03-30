@@ -61,7 +61,7 @@ Matrix A(2,2);
 	Matrix result(2,2);
 	std::ifstream("A.txt") >> A;
 	std::ifstream("B.txt") >> B;
-	std::ifstream("A*B.txt") >> result;
+	std::ifstream("AxB.txt") >> result;
 	expected=A*B;
 	REQUIRE(expected==result);
 }
