@@ -21,7 +21,7 @@ class Matrix
 {
 public:
 	Matrix<T>() :n(0), m(0), matrix(nullptr) {}
-	Matrix<T>(int rows, int columns)
+	Matrix<T>(int rows, int columns);
 	Matrix<T>(const Matrix &copy);
 	~Matrix<T>();
 	Matrix<T> operator + (const Matrix<T>&);
