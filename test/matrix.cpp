@@ -138,38 +138,6 @@ bool Matrix::operator == (const Matrix &matr)
 	}
 	return true;
 }
-bool Matrix::FillFromFile(char* path) {
-	ifstream stream;
-	try {
-		stream.open(path);
-
-		if (stream.is_open()) {
-			int n, m;
-
-			stream >> n >> m;
-			int **mass = new int*[n];
-			for (int i = 0; i < n; i++) {
-				mass[i] = new int[m];
-				for (int j = 0; j < m; j++) {
-					stream >> mass[i][j];
-				}
-			}
-
-			this->matrix = mass;
-			this->n = n;
-			this->m = m;
-			stream.close();
-
-			return true;
-		}
-	}
-	catch (const std::exception& e) {
-		cout << e.what() << '\n';
-		return false;
-	}
-	return false;
-}
-
 int* Matrix::operator [] (int index)
 {
 	if (index <= this->n)
@@ -189,17 +157,6 @@ int Matrix::Columns() const
 {
 	return m;
 }
-void Matrix::Fill()
-{
-	for (int i = 0; i<n; i++)
-	{
-		for (int j = 0; j<m; j++)
-		{
-			cout << "Enter [" << i << "][" << j << "] element of Matrix: ";
-			cin >> matrix[i][j];
-		}
-	}
-}
 ostream &operator << (ostream &os, const Matrix &temp)
 {
 	for (int i = 0; i < temp.n; i++)
@@ -211,4 +168,18 @@ ostream &operator << (ostream &os, const Matrix &temp)
 		os << endl;
 	}
 	return os;
+}
+istream &operator >> (istream &input, Matrix &matr)
+{
+    for (int i = 0; i < matr.n; i++) 
+    {
+        for (int j = 0; j < matr.m; j++) 
+        {
+            if (!(input >> matr.matrix[i][j]))
+            {
+                throw "exception in fill matrix";
+            }
+        }
+    }
+    return input;
 }
