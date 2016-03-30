@@ -138,7 +138,7 @@ bool Matrix::operator == (const Matrix &matr)
 	}
 	return true;
 }
-bool Matrix::FillFromFile(const std::string &filePath)
+bool Matrix::FillFromFile(char *filePath)
 {
 	ifstream input;
 	input.open(filePath);
