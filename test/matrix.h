@@ -19,7 +19,7 @@ public:
 	Matrix operator * (const Matrix&);
 	Matrix &operator = (const Matrix&);
 	bool operator == (const Matrix&);
-	bool FillFromFile(char *FilePath);
+	bool FillFromFile(char *filePath);
 	int* operator [] (int);
 	int Rows() const;
 	int Columns() const;
