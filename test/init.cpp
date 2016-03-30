@@ -26,10 +26,10 @@ SCENARIO("Matrix operator >>", "[Fill]") {
 	std::ifstream input("A.txt");
 	Matrix A = Matrix(2, 2);
 	REQUIRE( input >> A );
-	REQUIRE( A[0][0] == 1 );
-	REQUIRE( A[0][1] == 5 );
-	REQUIRE( A[1][0] == 6 );
-	REQUIRE( A[1][1] == 2 );
+	REQUIRE( A[0][0] == 2 );
+	REQUIRE( A[0][1] == 3 );
+	REQUIRE( A[1][0] == 2 );
+	REQUIRE( A[1][1] == 1 );
 }
 
 SCENARIO("Matrix operator +", "[addition]") {
