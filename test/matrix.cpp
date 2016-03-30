@@ -138,7 +138,7 @@ bool Matrix::operator == (const Matrix &matr)
 	}
 	return true;
 }
-bool CMatrix<T>::readFromFile(char* path) {
+bool Matrix::FillFromFile(char* path) {
 	ifstream stream;
 	try {
 		stream.open(path);
