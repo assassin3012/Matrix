@@ -16,7 +16,6 @@ int max(int a, int b)
 	return a > b ? a : b;
 }
 
-
 Matrix::Matrix(int rows, int columns) :n(rows), m(columns)
 {
 	matrix = new int*[n];
