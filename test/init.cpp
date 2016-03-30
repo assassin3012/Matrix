@@ -29,7 +29,7 @@ SCENARIO("Matrix init", "[init]")
 SCENARIO("Matrix operator >>", "[Fill]") 
 {
 	std::ifstream input("A.txt");
-	Matrix<int> A = Matrix(2, 2);
+	Matrix<int> A = Matrix<int>(2, 2);
 	REQUIRE( input >> A );
 	REQUIRE( A[0][0] == 2 );
 	REQUIRE( A[0][1] == 3 );
