@@ -138,42 +138,38 @@ bool Matrix::operator == (const Matrix &matr)
 	}
 	return true;
 }
-bool Matrix::FillFromFile(char *filePath)
-{
-	ifstream input;
-	input.open(filePath);
-	bool isSucess = true;
-	if (input.is_open())
-	{
-		if (matrix != nullptr)
-		{
-			for (int i = 0; i < n; i++)
-			{
-				delete[] matrix[i];
+bool CMatrix<T>::readFromFile(char* path) {
+	ifstream stream;
+	try {
+		stream.open(path);
+
+		if (stream.is_open()) {
+			int n, m;
+
+			stream >> n >> m;
+			T **mass = new T*[n];
+			for (int i = 0; i < n; i++) {
+				mass[i] = new T[m];
+				for (int j = 0; j < m; j++) {
+					stream >> mass[i][j];
+				}
 			}
-			delete[] matrix;
-		}
-		int rows, columns;
-		input >> rows >> columns;
-		n = rows;
-		m = columns;
-		matrix = new int*[n];
-		for (int i = 0; i < n; i++)
-		{
-			matrix[i] = new int[m];
-			for (int j = 0; j < m; j++)
-			{
-				input >> matrix[i][j];
-			}
+
+			this->matrix = mass;
+			this->n = n;
+			this->m = m;
+			stream.close();
+
+			return true;
 		}
 	}
-	else
-	{
-		isSucess = false;
+	catch (const std::exception& e) {
+		cout << e.what() << '\n';
+		return false;
 	}
-	input.close();
-	return isSucess;
+	return false;
 }
+
 int* Matrix::operator [] (int index)
 {
 	if (index <= this->n)
