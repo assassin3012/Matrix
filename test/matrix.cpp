@@ -57,7 +57,7 @@ Matrix<T>::~Matrix()
 	}
 }
 template <typename T>
-Matrix Matrix::operator + (const Matrix<T> &matr)
+Matrix<T> Matrix<T>::operator + (const Matrix<T> &matr)
 {
 	Matrix result(n, m);
 	for (int i = 0; i < n; i++)
@@ -70,7 +70,7 @@ Matrix Matrix::operator + (const Matrix<T> &matr)
 	return result;
 }
 template <typename T>
-Matrix Matrix::operator - (const Matrix<T> &matr)
+Matrix<T> Matrix<T>::operator - (const Matrix<T> &matr)
 {
 	Matrix result(n, m);
 	for (int i = 0; i < n; i++)
@@ -83,7 +83,7 @@ Matrix Matrix::operator - (const Matrix<T> &matr)
 	return result;
 }
 template <typename T>
-Matrix Matrix::operator * (const Matrix<T> &matr)
+Matrix<T> Matrix<T>::operator * (const Matrix<T> &matr)
 {
 	Matrix result(n, matr.m);
 	for (int i = 0; i < n; i++)
@@ -101,7 +101,7 @@ Matrix Matrix::operator * (const Matrix<T> &matr)
 	return result;
 }
 template <typename T>
-Matrix &Matrix<T>::operator = (const Matrix<T> &matr)
+Matrix<T> &Matrix<T>::operator = (const Matrix<T> &matr)
 {
 	if (this != &matr)
 	{
