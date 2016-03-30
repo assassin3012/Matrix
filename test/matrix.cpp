@@ -7,8 +7,8 @@
 #include <fstream>
 #include <string>
 using namespace std;
-#ifndef MATR_CPP
-#define MATR_CPP
+#ifndef matrix.cpp
+#define matrix.cpp
 int min(int a, int b)
 {
 	return a < b ? a : b;
@@ -243,3 +243,4 @@ ostream &operator << (ostream &os, const Matrix &temp)
 	}
 	return os;
 }
+#endif
