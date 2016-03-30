@@ -24,7 +24,7 @@ SCENARIO("Matrix init", "[init]") {
 
 SCENARIO("Matrix operator+", "[addition]") {
 	Matrix A,B,AB,result;
-	A.FillFromFile("A.txt");
+	A.FillFromFile("A2x2.txt");
 	B.FillFromFile("B.txt");
 	result.FillFromFile("A+B.txt");
 	AB=A+B;
