@@ -1,7 +1,7 @@
 #include "matrix.h"
 #include <catch.hpp>
 #include <fstream>
-
+#include <iostream>
 SCENARIO("Matrix init", "[init]") 
 {
 	GIVEN("The number of rows and columns") 
