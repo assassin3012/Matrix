@@ -9,7 +9,7 @@ using namespace std;
 #ifndef matrix_cpp
 #define matrix_cpp
 template <typename T>
-Matrix<T>::Matrix(int rows, int columns) :n(rows), m(columns)
+Matrix<T>::Matrix(unsigned int rows, unsigned int columns) :n(rows), m(columns)
 {
 	matrix = new T*[n];
 	for (int i = 0; i<n; i++)
@@ -49,6 +49,14 @@ Matrix<T>::~Matrix()
 template <typename T>
 Matrix<T> Matrix<T>::operator + (const Matrix<T> &matr)
 {
+		if (this->n!=matr.n || this->m!=matr.m) 
+	{
+		throw "Sizes don't match";
+	}
+	else if (this->matrix==nullptr || matr.matrix==nullptr)
+	{
+		throw "Matrix is empty";
+	}
 	Matrix result(n, m);
 	for (int i = 0; i < n; i++)
 	{
@@ -62,6 +70,14 @@ Matrix<T> Matrix<T>::operator + (const Matrix<T> &matr)
 template <typename T>
 Matrix<T> Matrix<T>::operator - (const Matrix<T> &matr)
 {
+	if (this->n!=matr.n || this->m!=matr.m) 
+	{
+		throw "Sizes don't match";
+	}
+	else if (this->matrix==nullptr || matr.matrix==nullptr)
+	{
+		throw "Matrix is empty";
+	}
 	Matrix result(n, m);
 	for (int i = 0; i < n; i++)
 	{
@@ -75,6 +91,14 @@ Matrix<T> Matrix<T>::operator - (const Matrix<T> &matr)
 template <typename T>
 Matrix<T> Matrix<T>::operator * (const Matrix<T> &matr)
 {
+	if (this->n!=matr.m) 
+	{
+		throw "Sizes don't match";
+	}
+	else if (this->matrix==nullptr || matr.matrix==nullptr)
+	{
+		throw "Matrix is empty";
+	}
 	Matrix result(n, matr.m);
 	for (int i = 0; i < n; i++)
 	{
@@ -138,8 +162,11 @@ bool Matrix<T>::operator == (const Matrix<T> &matr)
 	return true;
 }
 template <typename T>
-T* Matrix<T>::operator [] (int index)
+T* Matrix<T>::operator [] (unsigned int index)
 {
+	if (matrix==nullptr) {
+		throw "Matrix is empty";
+	}
 	if (index <= this->n)
 	{
 		return this->matrix[index];
@@ -150,12 +177,12 @@ T* Matrix<T>::operator [] (int index)
 	}
 }
 template <typename T>
-int Matrix<T>::Rows() const
+unsigned int Matrix<T>::Rows() const
 {
 	return n;
 }
 template <typename T>
-int Matrix<T>::Columns() const
+unsigned int Matrix<T>::Columns() const
 {
 	return m;
 }
