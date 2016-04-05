@@ -6,9 +6,9 @@
 #include <fstream>
 #include <string>
 using namespace std;
-template <typename T>
 #ifndef matrix_cpp
 #define matrix_cpp
+template <typename T>
 Matrix<T>::Matrix(int rows, int columns) :n(rows), m(columns)
 {
 	matrix = new T*[n];
