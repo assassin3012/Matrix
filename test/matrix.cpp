@@ -160,7 +160,7 @@ int Matrix<T>::Columns() const
 	return m;
 }
 template <typename T>
-ostream &operator << (ostream &out, const Matrix<T> &temp)
+std::ostream &operator << (std::ostream &out, const Matrix<T> &temp)
 {
 	for (int i = 0; i < temp.n; i++)
 	{
@@ -173,7 +173,7 @@ ostream &operator << (ostream &out, const Matrix<T> &temp)
 	return out;
 }
 template <typename T>
-istream &operator >> (istream &input, Matrix<T> &matr)
+std::istream &operator >> (std::istream &input, Matrix<T> &matr)
 {
     for (int i = 0; i < matr.n; i++) 
     {
