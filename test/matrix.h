@@ -6,13 +6,13 @@ using namespace std;
 
 template <typename T>
 class Matrix;
-
+/*
 template <class T>
 std::ostream &operator << (std::ostream &out, const Matrix<T> &);
 
 template <class T>
 std::istream &operator >> (std::istream &input, Matrix<T> &);
-
+*/
 template <typename T>
 class Matrix
 {
