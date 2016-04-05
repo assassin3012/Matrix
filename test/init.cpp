@@ -1,6 +1,7 @@
+#include "stdafx.h"
 #include "matrix.h"
 #include <catch.hpp>
-#include "stdafx.h"
+
 SCENARIO("Matrix init", "[init]") 
 {
 	GIVEN("The number of rows and columns") 
