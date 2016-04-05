@@ -77,4 +77,5 @@ Matrix<T>::~Matrix()
 		delete[] matrix;
 	}
 }
+#include "matrix.cpp"
 #endif
