@@ -159,7 +159,7 @@ int Matrix<T>::Columns() const
 {
 	return m;
 }
-template <typename T>
+/*template <typename T>
 std::ostream &operator << (std::ostream &out, const Matrix<T> &temp)
 {
 	for (int i = 0; i < temp.n; i++)
@@ -186,5 +186,5 @@ std::istream &operator >> (std::istream &input, Matrix<T> &matr)
         }
     }
     return input;
-}
+}*/
 #endif
