@@ -39,43 +39,5 @@ private:
 	int n;	// ñòðîê
 	int m;	// ñòîëáöîâ
 };
-template <typename T>
-Matrix<T>::Matrix(int rows, int columns) :n(rows), m(columns)
-{
-	matrix = new T*[n];
-	for (int i = 0; i<n; i++)
-	{
-		matrix[i] = new T[m];
-		for (int j = 0; j<m; j++)
-		{
-			matrix[i][j] = 0;
-		}
-	}
-}
-template <typename T>
-Matrix<T>::Matrix(const Matrix& copy) :n(copy.n), m(copy.m)
-{
-	matrix = new T*[n];
-	for (int i = 0; i<n; i++)
-	{
-		matrix[i] = new T[m];
-		for (int j = 0; j<m; j++)
-		{
-			matrix[i][j] = copy.matrix[i][j];
-		}
-	}
-}
-template <typename T>
-Matrix<T>::~Matrix()
-{
-	if (matrix != nullptr)
-	{
-		for (int i = 0; i<n; i++)
-		{
-			delete[] matrix[i];
-		}
-		delete[] matrix;
-	}
-}
 #include "matrix.cpp"
 #endif
