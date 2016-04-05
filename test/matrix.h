@@ -40,7 +40,7 @@ class Matrix
 {
 public:
 	Matrix<T>() :n(0), m(0), matrix(nullptr) {}
-	Matrix(int rows, int columns);
+	Matrix(unsigned int rows, unsigned int columns);
 	Matrix(const Matrix &copy);
 	~Matrix<T>();
 	Matrix operator + (const Matrix&);
@@ -48,15 +48,15 @@ public:
 	Matrix operator * (const Matrix&);
 	Matrix &operator = (const Matrix&);
 	bool operator == (const Matrix&);
-	T* operator [] (int);
-	int Rows() const;
-	int Columns() const;
+	T* operator [] (unsigned int);
+	unsigned int Rows() const;
+	unsigned int Columns() const;
 	friend std::ostream &operator << <>(std::ostream &out, const Matrix<T> &temp);
 	friend std::istream &operator >> <>(std::istream &input, Matrix<T> &matr);
 private:
 	T **matrix;
-	int n;	// ñòðîê
-	int m;	// ñòîëáöîâ
+	unsigned int n;	// ñòðîê
+	unsigned int m;	// ñòîëáöîâ
 };
 #include "matrix.cpp"
 #endif
