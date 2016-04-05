@@ -1,10 +1,7 @@
 #pragma once
 #ifndef matrix_h
 #define matrix_h
-
 #include <iostream>
-#include <fstream>
-#include <string>
 using namespace std;
 
 template <typename T>
