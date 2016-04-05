@@ -7,6 +7,8 @@
 #include <string>
 using namespace std;
 template <typename T>
+#ifndef matrix_cpp
+#define matrix_cpp
 Matrix<T>::Matrix(int rows, int columns) :n(rows), m(columns)
 {
 	matrix = new T*[n];
@@ -185,3 +187,4 @@ istream &operator >> (istream &input, Matrix<T> &matr)
     }
     return input;
 }
+#endif
