@@ -29,8 +29,8 @@ public:
 	T* operator [] (int);
 	int Rows() const;
 	int Columns() const;
-	friend std::ostream &operator << (std::ostream &out, const Matrix<T> &temp);
-	friend std::istream &operator >> (std::istream &input, Matrix<T> &matr);
+	friend std::ostream &operator << <>(std::ostream &out, const Matrix<T> &temp);
+	friend std::istream &operator >> <>(std::istream &input, Matrix<T> &matr);
 private:
 	T **matrix;
 	int n;	// ñòðîê
