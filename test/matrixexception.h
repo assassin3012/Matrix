@@ -33,7 +33,7 @@ private:
 class RowException: public MatrixException 
 {
 public:
-  RowException(): MatrixException("Row's index error") {};
+  RowException(): MatrixException("Row's index") {};
 private:
   string msg;
 };
