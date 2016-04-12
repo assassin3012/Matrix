@@ -29,10 +29,10 @@ public:
 private:
   string msg;
 }
-class FillException: public MatrixException 
+class RowException: public MatrixException 
 {
 public:
-  FillException(): MatrixException("Matrix fill") {};
+  RowException(): MatrixException("Row's index error") {};
 private:
   string msg;
 }
