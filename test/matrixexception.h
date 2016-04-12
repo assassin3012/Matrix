@@ -1,11 +1,11 @@
-#include <string>
+
 
 class MatrixException
 {
 public:
-  MatrixException(const string& msg): msg(msg) {};
+  MatrixException(const char* msg): msg(msg) {};
 private:
-  string msg;
+  char* msg;
 }
 
 class SizeException: public MatrixException 
@@ -13,26 +13,26 @@ class SizeException: public MatrixException
 public:
   SizeException(): MatrixException("Sizes don't match") {};
 private:
-  string msg;
+  char* msg;
 }
 class EmptyException: public MatrixException 
 {
 public:
   EmptyException(): MatrixException("Matrix empty") {};
 private:
-  string msg;
+  char* msg;
 }
 class FillException: public MatrixException 
 {
 public:
   FillException(): MatrixException("Matrix fill") {};
 private:
-  string msg;
+  char* msg;
 }
 class RowException: public MatrixException 
 {
 public:
   RowException(): MatrixException("Row's index error") {};
 private:
-  string msg;
+  char* msg;
 }
