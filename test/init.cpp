@@ -146,3 +146,16 @@ SCENARIO("Exception row's index", "[indexerror]")
 	}
 		REQUIRE(flag);
 }
+SCENARIO("Exception row's index", "[indexerror]")
+{
+	bool flag=false;
+	Matrix<int> A(2, 2);
+	Matrix<int> B(3, 3);
+	try {
+		A*B;
+	}
+	catch (MatrixException &) {
+		flag = true;
+	}
+		REQUIRE(flag);
+}
