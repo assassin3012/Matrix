@@ -26,7 +26,7 @@ private:
 class FillException: public MatrixException 
 {
 public:
-  FillException(): MatrixException("Matrix fill") {};
+  FillException(): MatrixException("Matrix fill error") {};
 private:
   string msg;
 };
