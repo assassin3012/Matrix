@@ -3,7 +3,7 @@
 class MatrixException
 {
 public:
-  MatrixException(const string msg): msg(msg) {};
+  MatrixException(const string& msg): msg(msg) {};
 private:
   string msg;
 }
