@@ -58,7 +58,7 @@ private:
 	T **matrix;
 	unsigned int n;	// ñòðîê
 	unsigned int m;	// ñòîëáöîâ
-};
+};/*
 template <typename T>
 std::ostream &operator << (std::ostream &out, const Matrix<T> &temp)
 {
@@ -86,6 +86,6 @@ std::istream &operator >> (std::istream &input, Matrix<T> &matr)
         }
     }
     return input;
-};
+};*/
 #include "matrix.cpp"
 #endif
