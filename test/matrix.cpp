@@ -165,10 +165,11 @@ bool Matrix<T>::operator == (const Matrix<T> &matr)
 template <typename T>
 T* Matrix<T>::operator [] (unsigned int index)
 {
-	if (matrix==nullptr) {
+	if (matrix==nullptr) 
+	{
 		throw EmptyException();
 	}
-	if (index <= this->n)
+	else if (index <= this->n)
 	{
 		return this->matrix[index];
 	}
