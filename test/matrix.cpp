@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "matrixexception.h"
 using namespace std;
 #ifndef matrix_cpp
 #define matrix_cpp
