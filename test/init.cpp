@@ -103,7 +103,7 @@ SCENARIO("Matrix operator ==", "[comparison]")
 }
 SCENARIO("Exception fill", "[fillerror]")
 {
-	bool flagA=false, flafB=false;
+	bool flagA=false, flagB=false;
 	Matrix<int> A(3, 2);
 	Matrix<int> B(2, 2);
 	try {
@@ -112,13 +112,13 @@ SCENARIO("Exception fill", "[fillerror]")
 	catch (MatrixException &) {
 		flagA = true;
 	}
+	REQUIRE(flagA);
 	try {
 		std::ifstream("404.txt") >> A;
 	}
 	catch (MatrixException &) {
 		flagB = true;
 	}
-	REQUIRE(flagA);
 	REQUIRE(flagB);
 }
 SCENARIO("Exception empty", "[emptyerror]")
