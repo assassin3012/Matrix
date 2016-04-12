@@ -51,11 +51,11 @@ Matrix<T> Matrix<T>::operator + (const Matrix<T> &matr)
 {
 		if (this->n!=matr.n || this->m!=matr.m) 
 	{
-		throw "Sizes don't match";
+		throw SizeException();
 	}
 	else if (this->matrix==nullptr || matr.matrix==nullptr)
 	{
-		throw "Matrix is empty";
+		throw EmptyException();
 	}
 	Matrix result(n, m);
 	for (int i = 0; i < n; i++)
@@ -72,11 +72,11 @@ Matrix<T> Matrix<T>::operator - (const Matrix<T> &matr)
 {
 	if (this->n!=matr.n || this->m!=matr.m) 
 	{
-		throw "Sizes don't match";
+		throw SizeException();
 	}
 	else if (this->matrix==nullptr || matr.matrix==nullptr)
 	{
-		throw "Matrix is empty";
+		throw EmptyException();
 	}
 	Matrix result(n, m);
 	for (int i = 0; i < n; i++)
@@ -93,11 +93,11 @@ Matrix<T> Matrix<T>::operator * (const Matrix<T> &matr)
 {
 	if (this->n!=matr.m) 
 	{
-		throw "Sizes don't match";
+		throw SizeException();
 	}
 	else if (this->matrix==nullptr || matr.matrix==nullptr)
 	{
-		throw "Matrix is empty";
+		throw EmptyException();
 	}
 	Matrix result(n, matr.m);
 	for (int i = 0; i < n; i++)
@@ -165,7 +165,7 @@ template <typename T>
 T* Matrix<T>::operator [] (unsigned int index)
 {
 	if (matrix==nullptr) {
-		throw "Matrix is empty";
+		throw EmptyException();
 	}
 	if (index <= this->n)
 	{
@@ -173,7 +173,7 @@ T* Matrix<T>::operator [] (unsigned int index)
 	}
 	else
 	{
-		return nullptr;
+		throw RowException();
 	}
 }
 template <typename T>
@@ -186,32 +186,4 @@ unsigned int Matrix<T>::Columns() const
 {
 	return m;
 }
-/*template <typename T>
-std::ostream &operator << (std::ostream &out, const Matrix<T> &temp)
-{
-	for (int i = 0; i < temp.n; i++)
-	{
-		for (int j = 0; j < temp.m; j++)
-		{
-			out << temp.matrix[i][j] << " ";
-		}
-		out << endl;
-	}
-	return out;
-}
-template <typename T>
-std::istream &operator >> (std::istream &input, Matrix<T> &matr)
-{
-    for (int i = 0; i < matr.n; i++) 
-    {
-        for (int j = 0; j < matr.m; j++) 
-        {
-            if (!(input >> matr.matrix[i][j]))
-            {
-                throw "Matrix fill";
-            }
-        }
-    }
-    return input;
-}*/
 #endif
