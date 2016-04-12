@@ -60,7 +60,7 @@ private:
 	unsigned int m;	// ñòîëáöîâ
 };
 template <typename T>
-std::ostream &operator << (std::ostream &out, const Matrix<T> &temp);
+std::ostream &operator << (std::ostream &out, const Matrix<T> &temp)
 {
 	for (int i = 0; i < temp.n; i++)
 	{
@@ -73,7 +73,7 @@ std::ostream &operator << (std::ostream &out, const Matrix<T> &temp);
 	return out;
 };
 template <typename T>
-std::istream &operator >> (std::istream &input, Matrix<T> &matr);
+std::istream &operator >> (std::istream &input, Matrix<T> &matr)
 {
     for (int i = 0; i < matr.n; i++) 
     {
