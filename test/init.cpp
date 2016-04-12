@@ -146,7 +146,7 @@ SCENARIO("Exception row's index", "[indexerror]")
 	}
 		REQUIRE(flag);
 }
-SCENARIO("Exception row's index", "[indexerror]")
+SCENARIO("Exception size", "[sizerror]")
 {
 	bool flag=false;
 	Matrix<int> A(2, 2);
