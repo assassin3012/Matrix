@@ -101,3 +101,48 @@ SCENARIO("Matrix operator ==", "[comparison]")
 	std::ifstream("A.txt") >> B;
 	REQUIRE(A==B);
 }
+SCENARIO("Exception fill", "[fillerror]")
+{
+	bool flagA=false, flafB=false;
+	Matrix<int> A(3, 2);
+	Matrix<int> B(2, 2);
+	try {
+		std::ifstream("A.txt") >> A;
+	}
+	catch (MatrixException &) {
+		flagA = true;
+	}
+	try {
+		std::ifstream("404.txt") >> A;
+	}
+	catch (MatrixException &) {
+		flagB = true;
+	}
+	REQUIRE(flagA);
+	REQUIRE(flagB);
+}
+SCENARIO("Exception empty", "[emptyerror]")
+{
+	bool flag=false;
+	Matrix<int> A;
+	try {
+	int* row = A[0];
+	}
+	catch (MatrixException &) {
+		flag = true;
+	}
+		REQUIRE(flag);
+}
+SCENARIO("Exception row's index", "[indexerror]")
+{
+	bool flag=false;
+	Matrix<int> A(2, 2);
+	std::ifstream("A.txt") >> A;
+	try {
+	int* row = A[404];
+	}
+	catch (MatrixException &) {
+		flag = true;
+	}
+		REQUIRE(flag);
+}
