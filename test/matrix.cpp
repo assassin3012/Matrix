@@ -209,7 +209,7 @@ std::istream &operator >> (std::istream &input, Matrix<T> &matr)
         {
             if (!(input >> matr.matrix[i][j]))
             {
-                throw "Error matrix fill";
+                throw FillException();
             }
         }
     }
