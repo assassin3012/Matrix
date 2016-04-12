@@ -2,7 +2,6 @@
 #ifndef matrix_h
 #define matrix_h
 #include <iostream>
-#include <string>
 #include "matrixexception.h"
 using namespace std;
 
