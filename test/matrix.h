@@ -71,7 +71,7 @@ std::ostream &operator << (std::ostream &out, const Matrix<T> &temp);
 		out << endl;
 	}
 	return out;
-}
+};
 template <typename T>
 std::istream &operator >> (std::istream &input, Matrix<T> &matr);
 {
@@ -86,6 +86,6 @@ std::istream &operator >> (std::istream &input, Matrix<T> &matr);
         }
     }
     return input;
-}
+};
 #include "matrix.cpp"
 #endif
