@@ -1,11 +1,12 @@
 #pragma once
-
+#include <string>
+using namespace std;
 class MatrixException
 {
 public:
-  MatrixException(char* msg): msg(msg) {};
+  MatrixException(string msg): msg(msg) {};
 private:
-  char* msg;
+  string msg;
 };
 
 class SizeException: public MatrixException 
@@ -13,26 +14,26 @@ class SizeException: public MatrixException
 public:
   SizeException(): MatrixException("Sizes don't match") {};
 private:
-  char* msg;
+  string msg;
 };
 class EmptyException: public MatrixException 
 {
 public:
   EmptyException(): MatrixException("Matrix empty") {};
 private:
-  char* msg;
+  string msg;
 };
 class FillException: public MatrixException 
 {
 public:
   FillException(): MatrixException("Matrix fill") {};
 private:
-  char* msg;
+  string msg;
 };
 class RowException: public MatrixException 
 {
 public:
   RowException(): MatrixException("Row's index error") {};
 private:
-  char* msg;
+  string msg;
 };
