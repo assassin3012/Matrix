@@ -98,7 +98,7 @@ Matrix<T> Matrix<T>::operator * (const Matrix<T> &matr)
 	}
 	else if (this->matrix==nullptr || matr.matrix==nullptr)
 	{
-		throw EmptyException();
+		throw EmptyException1();
 	}
 	Matrix result(n, matr.m);
 	for (int i = 0; i < n; i++)
