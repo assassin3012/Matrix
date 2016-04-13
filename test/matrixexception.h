@@ -19,7 +19,7 @@ private:
 class SizeException1: public MatrixException 
 {
 public:
-  SizeExceptio1n(): MatrixException("Sizes don't match for *") {};
+  SizeException1(): MatrixException("Sizes don't match for *") {};
 private:
   string msg;
 };
