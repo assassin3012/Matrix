@@ -94,11 +94,11 @@ Matrix<T> Matrix<T>::operator * (const Matrix<T> &matr)
 {
 	if (this->n!=matr.m) 
 	{
-		throw SizeException();
+		throw SizeException1();
 	}
 	else if (this->matrix==nullptr || matr.matrix==nullptr)
 	{
-		throw EmptyException1();
+		throw EmptyException();
 	}
 	Matrix result(n, matr.m);
 	for (int i = 0; i < n; i++)
