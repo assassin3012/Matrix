@@ -152,6 +152,19 @@ SCENARIO("Exception size", "[sizerror]")
 	Matrix<int> A(2, 2);
 	Matrix<int> B(3, 3);
 	try {
+		A+B;
+	}
+	catch (MatrixException &) {
+		flag = true;
+	}
+		REQUIRE(flag);
+}
+SCENARIO("Exception size for *", "[sizerror1]")
+{
+	bool flag=false;
+	Matrix<int> A(2, 2);
+	Matrix<int> B(3, 3);
+	try {
 		A*B;
 	}
 	catch (MatrixException &) {
