@@ -16,6 +16,13 @@ public:
 private:
   string msg;
 };
+class SizeException1: public MatrixException 
+{
+public:
+  SizeExceptio1n(): MatrixException("Sizes don't match for *") {};
+private:
+  string msg;
+};
 class EmptyException: public MatrixException 
 {
 public:
