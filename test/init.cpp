@@ -117,7 +117,7 @@ SCENARIO("Exception fill", "[fillerror]")
 		flagBadA = true;
 	}
 	REQUIRE(flagA);
-	REQUIRE(flagBadA);
+	REQUIRE(!flagBadA);
 	try {
 		std::ifstream("404.txt") >> A;
 	}
@@ -137,14 +137,14 @@ SCENARIO("Exception empty", "[emptyerror]")
 	Matrix<int> A;
 	try {
 	int* row = A[0];
-	}/*
+	}
 	catch (EmptyException &ex) {
 		flag = true;
-	}*/
+	}
 	catch (MatrixException &ex) {
 		flagBad = true;
-	}/*
-	REQUIRE(flag);*/
+	}
+	REQUIRE(flag);
 	REQUIRE(!flagBad);
 }
 SCENARIO("Exception row's index", "[indexerror]")
