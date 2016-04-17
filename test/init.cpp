@@ -174,9 +174,9 @@ SCENARIO("Exception size", "[sizerror]")
 	try {
 		A+B;
 	}
-/*	catch (SizeException &ex) {
+	catch (SizeException &ex) {
 		flag = true;
-	}*/
+	}
 	catch (MatrixException &ex) {
 		flagBad = true;
 	}
