@@ -259,8 +259,8 @@ SCENARIO("Template test", "[Ttest]")
 	Matrix<float> resultfloat(2, 2);
 	std::ifstream("A.txt") >> Afloat;
 	std::ifstream("B.txt") >> Bfloat;
-	std::ifstream("A+B.txt") >> resultfloat;
-	expectedfloat=Afloat+Bfloat;
+	std::ifstream("AxB.txt") >> resultfloat;
+	expectedfloat=Afloat*Bfloat;
 	REQUIRE(expectedfloat==resultfloat);
 	
 	Matrix<char> Achar(2, 2);
@@ -269,7 +269,7 @@ SCENARIO("Template test", "[Ttest]")
 	Matrix<char> resultchar(2, 2);
 	std::ifstream("A.txt") >> Achar;
 	std::ifstream("B.txt") >> Bchar;
-	std::ifstream("AxBchar.txt") >> resultchar;
-	expectedchar=Achar*Bchar;
+	std::ifstream("A+B.txt") >> resultchar;
+	expectedchar=Achar+Bchar;
 	REQUIRE(expectedchar==resultchar);
 }
