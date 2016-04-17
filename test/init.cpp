@@ -117,7 +117,7 @@ SCENARIO("Exception fill", "[fillerror]")
 		flagBadA = true;
 	}
 	REQUIRE(flagA);
-	REQUIRE(!flagBadA);
+	REQUIRE(flagBadA);
 	try {
 		std::ifstream("404.txt") >> A;
 	}
