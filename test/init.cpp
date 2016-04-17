@@ -266,10 +266,8 @@ SCENARIO("Template test", "[Ttest]")
 	Matrix<char> Achar(1, 1);
 	Matrix<char> Bchar(1, 1);
 	Matrix<char> expectedchar(1, 1);
-	Matrix<char> resultchar(1, 1);
 	std::ifstream("A.txt") >> Achar;
 	std::ifstream("B.txt") >> Bchar;
-	std::ifstream("A+Bchar.txt") >> resultchar;
 	expectedchar=Achar+Bchar;
-	REQUIRE(expectedchar==resultchar);
+	REQUIRE( expectedchar[0][0] == 'c' );
 }
