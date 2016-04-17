@@ -263,10 +263,10 @@ SCENARIO("Template test", "[Ttest]")
 	expectedfloat=Afloat*Bfloat;
 	REQUIRE(expectedfloat==resultfloat);
 	
-	Matrix<char> Achar(2, 2);
-	Matrix<char> Bchar(2, 2);
-	Matrix<char> expectedchar(2, 2);
-	Matrix<char> resultchar(2, 2);
+	Matrix<char> Achar(1, 1);
+	Matrix<char> Bchar(1, 1);
+	Matrix<char> expectedchar(1, 1);
+	Matrix<char> resultchar(1, 1);
 	std::ifstream("A.txt") >> Achar;
 	std::ifstream("B.txt") >> Bchar;
 	std::ifstream("A+Bchar.txt") >> resultchar;
