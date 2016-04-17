@@ -103,7 +103,7 @@ SCENARIO("Matrix operator ==", "[comparison]")
 }
 SCENARIO("Exception fill", "[fillerror]")
 {
-	bool flagBadA=false, bool flagBadB=false;
+	bool flagBadA=false, flagBadB=false;
 	bool flagA=false, flagB=false;
 	Matrix<int> A(3, 2);
 	Matrix<int> B(2, 2);
@@ -236,7 +236,7 @@ SCENARIO("Template test", "[Ttest]")
 	Matrix<double> Adouble(2, 2);
 	Matrix<double> Bdouble(2, 2);
 	Matrix<double> expecteddouble(2, 2);
-	Matrix<double> result(2, 2);
+	Matrix<double> resultdouble(2, 2);
 	std::ifstream("A.txt") >> Adouble;
 	std::ifstream("B.txt") >> Bdouble;
 	std::ifstream("AxB.txt") >> resultdouble;
