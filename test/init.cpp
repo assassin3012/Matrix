@@ -109,14 +109,14 @@ SCENARIO("Exception fill", "[fillerror]")
 	try {
 		std::ifstream("A.txt") >> A;
 	}
-	catch (MatrixException &) {
+	catch (FillException &) {
 		flagA = true;
 	}
 	REQUIRE(flagA);
 	try {
 		std::ifstream("404.txt") >> A;
 	}
-	catch (MatrixException &) {
+	catch (FillException &) {
 		flagB = true;
 	}
 	REQUIRE(flagB);
@@ -128,7 +128,7 @@ SCENARIO("Exception empty", "[emptyerror]")
 	try {
 	int* row = A[0];
 	}
-	catch (MatrixException &) {
+	catch (EmptyException &) {
 		flag = true;
 	}
 		REQUIRE(flag);
@@ -141,7 +141,7 @@ SCENARIO("Exception row's index", "[indexerror]")
 	try {
 	int* row = A[404];
 	}
-	catch (MatrixException &) {
+	catch (RowException &) {
 		flag = true;
 	}
 		REQUIRE(flag);
@@ -154,7 +154,7 @@ SCENARIO("Exception size", "[sizerror]")
 	try {
 		A+B;
 	}
-	catch (MatrixException &) {
+	catch (SizeException &) {
 		flag = true;
 	}
 		REQUIRE(flag);
@@ -167,7 +167,7 @@ SCENARIO("Exception size for *", "[sizerror1]")
 	try {
 		A*B;
 	}
-	catch (MatrixException &) {
+	catch (SizeException1 &) {
 		flag = true;
 	}
 		REQUIRE(flag);
